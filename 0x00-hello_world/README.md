@@ -1,1 +1,1 @@
-THIS is reqdme
+This is readme
