@@ -1,2 +1,14 @@
+
 #!/bin/bash
-gcc -E  $CFILE > c
+
+CFILE=${CFILE:-main.c}
+
+if [ ! -f "$CFILE" ]; then
+    echo "Error: $CFILE not found"
+    exit 1
+fi
+
+echo "Preprocessing $CFILE"
+gcc -E "$CFILE" -o c
+
+echo "Result saved in 'c'"
